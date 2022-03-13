@@ -3222,6 +3222,16 @@ break
           fs.unlinkSync(ran)
         })
         break
+      case "buildgi": 
+               if (args.length < 1) return reply(`Masukkan nama characternya contoh #genshin mona`)
+              buff = await getBuffer(`https://raw.githubusercontent.com/xKurokochi/noenc/main/image/buildgi/${args[0]}.jpeg`)
+              buttons = [{buttonId: `!command`,buttonText:{displayText: `BACK MENU`},type:1}]
+              imageMsg = (await xeon.prepareMessageMedia(buff, "imageMessage", { thumbnail: buff, })).imageMessage
+              buttonsMessage = {footerText:'Mayumi DVT', imageMessage: imageMsg,
+              contentText:`Follow @syah_dvt_`,buttons,headerType:4}
+              prep = await xeon.prepareMessageFromContent(from,{buttonsMessage},{quoted: freply})
+              xeon.relayWAMessage(prep)
+		break
       case 'cutesound':
         encmedia100 = JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
         media = await DogeXeonOP.downloadAndSaveMediaMessage(encmedia100)
@@ -4024,16 +4034,16 @@ case 'bc':
              if (args.length < 1) return reply('Where is the text?')
              anu100 = await DogeXeonOP.chats.all()
              if (isMedia && !DogeXeonOP.message.videoMessage || isQuotedImage) {
-             const encmediaboomb = isQuotedImage ? JSON.parse(JSON.stringify(DogeXeonOP).replace('quotedM','m')).message.extendedTextMessage.contextInfo : DogeXeonOP
+             const encmediaboomb = isQuotedImage ? JSON.parse(JSON.stringify(DogeXeonOP).replace('quotedM','m')).message.extendedTextMessage.contextInfo : DogeXeonOP	
              bc100 = await DogeXeonOP.downloadMediaMessage(encmediaboomb)
              for (let _ of anu100) {
-             DogeXeonOP.sendMessage(_.jid, bc100, image, {quoted: fgi, caption: `*「 Doge Bot Broadcast 」*\n\n${body.slice(4)}`})
+             DogeXeonOP.sendMessage(_.jid, bc100, image, {quoted: fgi, caption: `*「 Miyuki DVT Broadcast 」*\n\n${body.slice(4)}`})
 }
              reply('Broadcast success')
              } else {
              for (let _ of anu100) {
              DogeXeonOP.sendMessage(_.jid, 
-			{"contentText": `*「 DOGE BOT BROADCASTING MESSAGE 」*\n\n${body.slice(4)}`,
+			{"contentText": `*「 MIYUKI DVT BROADCASTING MESSAGE 」*\n\n${body.slice(4)}`,
 			"footerText": `${tanggal}`,
 			"buttons": [
 			{"buttonId": `${prefix}menu`,
@@ -4089,12 +4099,12 @@ if (isMedia && !mek.message.videoMessage || isQuotedImage) {
 const encmediabcgc = isQuotedImage ? JSON.parse(JSON.stringify(mek).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : mek
 bcgc = await DogeXeonOP.downloadMediaMessage(encmediabcgc)
 for (let _ of groupMembers) {
-DogeXeonOP.sendMessage(_.jid, bcgc, image, { caption: `*「 DOGE BOT BROADCAST 」*\n*Group* : ${groupName}\n\n${body.slice(6)}` })
+DogeXeonOP.sendMessage(_.jid, bcgc, image, { caption: `*「 MIYUKI DVT BROADCAST 」*\n*Group* : ${groupName}\n\n${body.slice(6)}` })
 }
 reply('')
 } else {
 for (let _ of groupMembers) {
-sendMess(_.jid, `*「 DOGE BOT BROADCAST 」*\n*Group* : ${groupName}\n\n${body.slice(6)}`)
+sendMess(_.jid, `*「 MIYUKI DVT BROADCAST 」*\n*Group* : ${groupName}\n\n${body.slice(6)}`)
 }
 reply('Success broadcast group')
 }
@@ -4931,7 +4941,7 @@ reply(`${err}`)
     e = String(e)
     if (!e.includes("this.isZero") && !e.includes("jid")) {
 	console.log('Error : %s', color(e, 'red'))
-	DogeXeonOP.sendMessage(`${owner}@s.whatsapp.net`, `─────「 *ALERT-ERROR* 」─────\n\n\`\`\`${e}\`\`\`\n\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Dream Guy Xeon",body:"Dont forget to subscribe Xeon",previewType:"PHOTO",thumbnail:fs.readFileSync('./media/dogepic1.jpg'),sourceUrl:"https://wa.me/916909137213"}}})
+	DogeXeonOP.sendMessage(`${owner}@s.whatsapp.net`, `─────「 *ALERT-ERROR* 」─────\n\n\`\`\`${e}\`\`\`\n\n────────────────────`, MessageType.text, {contextInfo: { forwardingScore: 508, isForwarded: true, externalAdReply:{title: "Dream Guy ",body:"Dont forget to subscribe ",previewType:"PHOTO",thumbnail:fs.readFileSync('./media/dogepic1.jpg'),sourceUrl:"https://wa.me/6283117436733"}}})
         }
 	// console.log(e)
 	}
